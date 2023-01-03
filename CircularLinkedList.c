@@ -82,13 +82,46 @@ void display(struct Node *p)
         while(p != first);
 }
 
+void deleteCLL(struct Node *p,int index)
+{
+    struct Node *temp,*follow;
+    temp = first;
+    if(index <=0 && index > length(p))
+        printf("Invalid Index");
+    
+    if(index == 1)
+    {   
+        while(p->next != first)
+            p = p->next;
+        
+        p->next = first->next;
+        free(first);
+        first = p->next;
+    }
+    else{
+
+        for(int i=1;i<index-1;i++)
+            p = p->next;
+        
+        follow = p->next;
+        p->next = follow->next;
+        free(follow);
+
+    }
+
+   
+}
+
 int main() {
     
      create(1);
      create(2);
      create(3);
      create(4);
-    InsertCList(first,0,5); //pointer ,index ,data
-    display(first);
+     InsertCList(first,0,5); //pointer ,index ,data
+     //deleteCLL(first,1);
+     //deleteCLL(first,0);
+     deleteCLL(first,5);
+     display(first);
     return 0;
 }
