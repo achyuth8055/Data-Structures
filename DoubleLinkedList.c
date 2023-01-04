@@ -31,30 +31,33 @@ void create(int data){
 
 void DisplayDLL(struct Node *p)
 {
-
-     int count = 0;
-     struct Node *temp;
+ //    to display list in reverse order
+//      int count = 0;
+//      struct Node *temp;
    
-    temp = first;
-    while(temp->next != NULL){    
-        temp = temp->next;
+//     temp = first;
+//     while(temp->next != NULL){    
+//         temp = temp->next;
+//         count += 1;
+//     }
+    
+//     while(temp != first)
+//     {
+//         printf("%d \n",temp->data);
+//         temp = temp->prv;
+//     }    
+//     printf("%d \n",temp->data);
+    
+    
+   // display Orginal List
+    
+    while(p)
+    {
+        printf("%d \n",p->data);
+        p = p->next;
         count += 1;
     }
-    
-    while(temp != first)
-    {
-        printf("%d \n",temp->data);
-        temp = temp->prv;
-    }    
-    printf("%d \n",temp->data);
-
-    // while(p)
-    // {
-    //     printf("%d \n",p->data);
-    //     p = p->next;
-    //     count += 1;
-    // }
-    // printf("Their Are %d of Nodes Avaliable ",count);
+    printf("Their Are %d of Nodes Avaliable ",count);
 
 }
 
@@ -117,7 +120,9 @@ void main()
     create(7);
     create(8);
 
-    insert(first,0,50);
+    insert(first,9,50); // insert at Last
+    insert(first,5,50); //insert in middle
+    insert(first,0,50); //insert in Beginning
     DisplayDLL(first);
   
 }
