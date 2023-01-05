@@ -54,8 +54,7 @@ void DisplayDLL(struct Node *p)
         p = p->next;
         
     }
-  
-
+ 
 }
 
 int length(struct Node *p)
@@ -133,7 +132,6 @@ void deleteDLL(struct Node *p,int index)
 void reverseDLL(struct Node *p)
 {
     struct Node *temp;
-
     while(p)
     {
         temp = p->next;
@@ -149,18 +147,12 @@ void reverseDLL(struct Node *p)
 
 void circularDLL(struct Node *p)
 {
-
-
-    while(p->next != NULL)
-    {
+    while(p->next != NULL)    
         p = p->next;
-    }
-    printf("%d",p->data);
-
+ 
+   // printf("%d",p->data);
     p->next = first;
     first->prv = p;
-
-
 }
 
 void displayCDLL(struct Node *p)
@@ -169,11 +161,9 @@ void displayCDLL(struct Node *p)
         do{
             printf("%d \n",p->data);
             p = p->next;
-
         }while(p != temp);
 
 }
-
 
 void main()
 {
