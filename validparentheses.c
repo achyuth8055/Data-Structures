@@ -6,7 +6,7 @@ struct Stack
 {
     char *exp;
     int top;
-    struct Node *next;
+    struct Stack *next;
 } *first;
 
 int isEmpty()
