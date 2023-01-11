@@ -4,7 +4,7 @@
 
 struct Stack
 {
-    char *exp;
+    char exp;
     int top;
     struct Stack *next;
 } *first;
@@ -67,7 +67,7 @@ void validate(char *exp)
             }
         }
 
-        if(isEmpty(first))
+        if(!first)
             printf("valid()");
         else
             printf("invalid");
