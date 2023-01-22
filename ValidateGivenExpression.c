@@ -4,6 +4,7 @@
 // [] (( = Not Valid
 // ][ = not valid
 // []{(} Not Valid
+
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -16,6 +17,9 @@ char pop(struct Node *p)
 {
     struct Node *t;
     char ch;
+    if(first == NULL)
+        return 0;
+    
     t = first;
     t = t->next;
     ch = first->data;
@@ -81,7 +85,7 @@ int validate(char *exp)
 void main()
 {
     //main method
-    char *array = "((";
+    char *array = ")[]{}";
     int size = 7;
     if(validate(array))
         printf("Valid");
